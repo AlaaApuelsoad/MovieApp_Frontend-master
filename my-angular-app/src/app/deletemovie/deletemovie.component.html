@@ -1,0 +1,58 @@
+<div class="movie-dashboard">
+  <h1 class="dashboard-title">Movie Dashboard</h1>
+
+  <button class="btn btn-primary action-btn me-2" (click)="loadmovie()">Load Movie</button>
+  <button class="btn btn-primary action-btn me-2" (click)="createAdmin()" style="margin-left: 5px; color: #dc3545">Create Admin</button>
+  <table class="table table-bordered table-striped movie-table">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Poster</th>
+      <th>Delete Option</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let movie of movies">
+      <td>{{ movie.title }}</td>
+      <td>{{ movie.year }}</td>
+      <td>
+        <img
+          [src]="movie.poster"
+          alt="{{ movie.title }} poster"
+          class="movie-poster"
+        />
+      </td>
+      <td>
+        <button class="btn btn-danger delete-btn" (click)="deletemovie(movie.imdbID)">
+          Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item" [ngClass]="{ disabled: page === 0 }">
+        <button
+          class="page-link"
+          (click)="previousPage()"
+          [disabled]="page === 0"
+        >
+          Previous
+        </button>
+      </li>
+      <li class="page-item disabled">
+        <span class="page-link">Page {{ page + 1 }} of {{ totalPages }}</span>
+      </li>
+      <li class="page-item" [ngClass]="{ disabled: page === totalPages - 1 }">
+        <button
+          class="page-link"
+          (click)="nextPage()"
+        >
+          Next
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,39 @@
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <div class="form-header">
+    <h2>Login</h2>
+  </div>
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      id="username"
+      name="usernameOrEmail"
+      [(ngModel)]="user.usernameOrEmail"
+      required
+      placeholder="Enter your username or email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      [(ngModel)]="user.password"
+      required
+      placeholder="Enter your password"
+    />
+  </div>
+  <button type="submit" [disabled]="!loginForm.form.valid || isLoading">
+    Login
+  </button>
+  <div *ngIf="isLoading" class="spinner-container">
+    <div class="spinner"></div>
+  </div>
+  <div class="form-footer">
+    <p>
+      Don't have an account?
+      <a routerLink="/register" class="register-link">Create New Account!</a>
+    </p>
+  </div>
+</form>

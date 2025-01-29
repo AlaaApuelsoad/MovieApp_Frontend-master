@@ -1,0 +1,84 @@
+.myForm{
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  height: 97vh;
+}
+/* General Form Styling */
+.movie-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f3f4f6; /* Light background for Fawry's theme */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+/* Label Styling */
+.label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #004b8d; /* Fawry Blue */
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Input Field Styling */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Field Focus Effect */
+.input-field:focus {
+  border-color: #004b8d; /* Fawry Blue */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 75, 141, 0.5); /* Subtle blue glow */
+}
+
+/* Submit Button Styling */
+.submit-button {
+  background-color: #004b8d; /* Fawry Blue */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+/* Button Hover Effect */
+.submit-button:hover {
+  background-color: #003366; /* Darker Fawry Blue */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+/* Button Active Effect */
+.submit-button:active {
+  background-color: #002850; /* Even darker blue */
+  transform: translateY(0); /* Remove lift */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .movie-form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .input-field,
+  .submit-button {
+    font-size: 0.9rem;
+  }
+}

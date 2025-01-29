@@ -1,0 +1,197 @@
+<div class="movie-detail-container">
+  <div class="movie-card">
+    <div class="movie-poster-container">
+      <img
+        [src]="movie.poster"
+        alt="{{ movie.title }} poster"
+        class="movie-poster"
+      />
+    </div>
+    <div class="movie-info">
+      <h2 class="movie-title">{{ movie.title }}</h2>
+      <h2 style="color: skyblue">ImdbID : {{movie.imdbID}}</h2>
+      <p class="movie-genre">Genre: {{ movie.genre }}</p>
+      <p class="movie-year">Year: {{ movie.year }}</p>
+      <p class="movie-director">Director: {{ movie.director }}</p>
+      <p class="movie-actors">Actors: {{ movie.actors }}</p>
+      <p class="movie-awards">Awards: {{ movie.awards }}</p>
+      <p class="movie-runtime">Runtime: {{ movie.runtime }}</p>
+      <p class="movie-plot">Plot: {{ movie.plot }}</p>
+      <p class="movie-boxoffice">Box Office: {{ movie.boxOffice }}</p>
+      <button class="btn btn-primary action-btn" (click)="redirect()">Home</button>
+    </div>
+  </div>
+
+
+  <!-- Member Rating Section -->
+  <!-- Member Rating Section -->
+  <div class="member-rating" *ngIf="movie.MemberRating > 0">
+    <p class="rating-text">Your rating for this movie is:</p>
+    <div class="rating-stars">
+    <span *ngFor="let star of [1, 2, 3, 4, 5]">
+      <i
+        class="star"
+        [ngClass]="{ 'filled': star <= movie.MemberRating }"
+        aria-hidden="true"
+      >
+        ★
+      </i>
+    </span>
+    </div>
+  </div>
+
+  <div class="member-rating">
+    <p class="rating-text">Average Members rating:</p>
+    <div class="rating-stars">
+    <span *ngFor="let star of [1, 2, 3, 4, 5]">
+      <i
+        class="star"
+        [ngClass]="{ 'filled': star <= movie.MembersAverageRatings }"
+        aria-hidden="true"
+      >
+        ★
+      </i>
+    </span>
+    </div>
+  </div>
+
+<style>
+  .movie-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+
+  .movie-card {
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .movie-poster-container {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+  }
+
+  .movie-poster {
+    max-width: 200px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .movie-info {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .movie-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #004b8d;
+    margin: 0;
+  }
+
+  .movie-genre,
+  .movie-year,
+  .movie-director,
+  .movie-actors,
+  .movie-awards,
+  .movie-runtime,
+  .movie-plot,
+  .movie-boxoffice {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+  }
+
+  .action-btn {
+    align-self: flex-start;
+    background-color: #004b8d;
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 6px;
+    text-transform: uppercase;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .action-btn:hover {
+    background-color: #003366;
+    transform: translateY(-2px);
+  }
+
+  .action-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 75, 141, 0.5);
+  }
+
+  /* Member Rating Section */
+  .member-rating {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .rating-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .rating-stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .star {
+    font-size: 2.5rem;
+    color: #ddd;
+    transition: color 0.3s ease;
+  }
+
+  .star.filled {
+    color: #ffd700;
+  }
+
+  @media (max-width: 768px) {
+    .movie-card {
+      flex-direction: column;
+    }
+
+    .movie-poster {
+      max-width: 150px;
+    }
+
+    .movie-info {
+      padding: 15px;
+    }
+
+    .action-btn {
+      font-size: 0.85rem;
+      padding: 8px 16px;
+    }
+
+    .star {
+      font-size: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,43 @@
+<div class="movie-dashboard">
+  <h1 class="dashboard-title">Movie Dashboard</h1>
+
+  <button class="btn btn-danger me-2" (click)="redirect()">Home</button>
+
+  <table class="table movie-table">
+    <thead class="table-dark">
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Poster</th>
+      <th>Add Movie</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let movie of movies">
+      <td>{{movie.title}}</td>
+      <td>{{movie.year}}</td>
+      <td>
+        <img [src]="movie.poster" alt="{{ movie.title }}" class="movie-poster">
+      </td>
+      <td><button class="page-link" (click)="addToDb(movie.imdbID)">Add To DB</button></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item" [ngClass]="{'disabled': page === 1}">
+        <button class="page-link" (click)="previousPage()" [disabled]="page === 1">Previous</button>
+      </li>
+
+      <li class="page-item disabled">
+        <span class="page-link">{{ page }} of {{ totalPages }}</span>
+      </li>
+
+      <li class="page-item" [ngClass]="{'disabled': page === totalPages - 1}">
+        <button class="page-link" (click)="nextPage()">Next</button>
+      </li>
+    </ul>
+  </nav>
+</div>

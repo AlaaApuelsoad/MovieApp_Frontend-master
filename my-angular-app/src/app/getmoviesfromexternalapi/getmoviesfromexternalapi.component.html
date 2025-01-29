@@ -1,0 +1,16 @@
+<div class="myForm">
+  <form (ngSubmit)="loadMovies()" class="movie-form">
+    <div>
+      <label for="movietitle" class="label">Movie Title</label>
+      <input
+        id="movietitle"
+        type="text"
+        [(ngModel)]="movietitle"
+        name="movietitle"
+        required
+        class="input-field"
+      />
+      <button type="submit" class="submit-button">Submit</button>
+    </div>
+  </form>
+</div>

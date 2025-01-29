@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-md-3">
+      
+    </div>
+    <div class="col-md-9">
+      <div class="register">
+        <form [formGroup]="movieForm" class="w-50 m-5 p-5 my-5 rounded-4 border border-info rounded" (ngSubmit)="addProducts()">
+    <h2 class="text-center m-3" > Create New Movie</h2>
+          <div class="mb-3">
+            <br>
+            <label for="image" class="form-label">movie title</label>
+            <br>
+            <input type="text" class="form-control" id="image" formControlName="title">
+            <div *ngIf="movieForm.get('title')?.invalid && movieForm.get('title')?.touched" class="text-danger">
+              movie title is required.
+            </div>
+          </div>
+          <div class="mb-3">
+            <br>
+            <label for="name" class="form-label">movie genre</label>
+            <br>
+            <input type="text" class="form-control" id="genre" formControlName="genre">
+            <div *ngIf="movieForm.get('genre')?.invalid && movieForm.get('genre')?.touched" class="text-danger">
+              movie genre is required.
+            </div>
+          </div>
+           
+          <div class="mb-3">
+            <br>
+            <label for="name" class="form-label">movie description</label>
+            <br>
+            <input type="text" class="form-control" id="description" formControlName="description">
+            <div *ngIf="movieForm.get('genre')?.invalid && movieForm.get('genre')?.touched" class="text-danger">
+              movie description is required.
+            </div>
+          </div>
+          
+          <div class="mb-3">
+            <br>
+            <label for="name" class="form-label">movie poster</label>
+            <br>
+            <input type="text" class="form-control" id="poster" formControlName="poster">
+            <div *ngIf="movieForm.get('poster')?.invalid && movieForm.get('poster')?.touched" class="text-danger">
+              movie poster is required.
+            </div>
+          </div>
+          <div class="mb-3">
+            <br>
+            <label for="name" class="form-label">movie director</label>
+            <br>
+            <input type="text" class="form-control" id="director" formControlName="director">
+            
+            <div *ngIf="movieForm.get('director')?.invalid && movieForm.get('director')?.touched" class="text-danger">
+              movie director is required.
+            </div>
+            <br>
+          </div>
+          <div class="mb-3">
+            
+            <label for="name" class="form-label">movie year</label>
+            <br>
+            <input type="text" class="form-control" id="year" formControlName="year">
+            <div *ngIf="movieForm.get('year')?.invalid && movieForm.get('year')?.touched" class="text-danger">
+              movie year is required.
+            </div>
+          </div>
+          
+          <br>
+          
+          <button type="submit" class="btn btn-primary" [disabled]="movieForm.invalid">Add Movie</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

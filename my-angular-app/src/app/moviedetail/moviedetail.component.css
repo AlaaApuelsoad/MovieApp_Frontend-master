@@ -1,0 +1,84 @@
+/*!* Movie Detail Table Container *!*/
+/*.movie-detail-table {*/
+/*  width: 100%;*/
+/*  margin-top: 20px;*/
+/*  background-color: #f9f9f9;*/
+/*  border: 1px solid #ddd;*/
+/*  border-radius: 8px;*/
+/*  overflow: hidden;*/
+/*}*/
+
+/*!* Table Header *!*/
+/*.movie-detail-table thead {*/
+/*  background-color: #004b8d;*/
+/*  color: white;*/
+/*  text-transform: uppercase;*/
+/*  font-size: 0.95rem;*/
+/*  font-weight: bold;*/
+/*}*/
+
+/*.movie-detail-table th,*/
+/*.movie-detail-table td {*/
+/*  padding: 12px 15px;*/
+/*  text-align: left;*/
+/*  vertical-align: middle;*/
+/*  border-bottom: 1px solid #ddd;*/
+/*}*/
+
+/*.movie-detail-table tr:last-child td {*/
+/*  border-bottom: none; !* Remove border for the last row *!*/
+/*}*/
+
+/*.movie-detail-table tbody tr:hover {*/
+/*  background-color: #e6f2ff; !* Light blue hover effect *!*/
+/*}*/
+
+/*!* Movie Poster *!*/
+/*.movie-poster {*/
+/*  max-width: 80px;*/
+/*  height: auto;*/
+/*  border-radius: 6px;*/
+/*  border: 1px solid #ddd;*/
+/*  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*!* Action Button *!*/
+/*.action-btn {*/
+/*  background-color: #004b8d;*/
+/*  color: white;*/
+/*  padding: 8px 16px;*/
+/*  font-size: 0.9rem;*/
+/*  font-weight: bold;*/
+/*  border-radius: 6px;*/
+/*  text-transform: uppercase;*/
+/*  border: none;*/
+/*  transition: all 0.3s ease;*/
+/*}*/
+
+/*.action-btn:hover {*/
+/*  background-color: #003366;*/
+/*  transform: translateY(-2px);*/
+/*}*/
+
+/*.action-btn:focus {*/
+/*  outline: none;*/
+/*  box-shadow: 0 0 0 0.2rem rgba(0, 75, 141, 0.5);*/
+/*}*/
+
+/*!* Mobile Responsiveness *!*/
+/*@media (max-width: 768px) {*/
+/*  .movie-detail-table th,*/
+/*  .movie-detail-table td {*/
+/*    font-size: 0.85rem;*/
+/*    padding: 8px 10px;*/
+/*  }*/
+
+/*  .movie-poster {*/
+/*    max-width: 60px;*/
+/*  }*/
+
+/*  .action-btn {*/
+/*    font-size: 0.85rem;*/
+/*    padding: 6px 12px;*/
+/*  }*/
+/*}*/

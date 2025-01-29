@@ -1,0 +1,148 @@
+/* Center the form on the page */
+form {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px; /* Slightly rounder corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow for a subtle effect */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  border: 2px solid #004b8d;
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition on focus */
+}
+
+/* Form header styling */
+.form-header h2 {
+  margin-bottom: 20px;
+  color: #004b8d;
+  text-align: center;
+  font-size: 2rem; /* Increased font size for prominence */
+  font-weight: 600; /* Slightly bolder for emphasis */
+  letter-spacing: 0.5px; /* Added slight spacing for clarity */
+  text-transform: uppercase; /* Uppercase for more emphasis */
+}
+
+/* Form group for spacing and layout */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500; /* Less bold for better readability */
+  margin-bottom: 10px;
+  color: #004b8d;
+  transition: color 0.3s ease; /* Smooth transition for label color */
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem; /* Increased font size for easier reading */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f9f9f9; /* Soft background for input fields */
+  color: #333; /* Darker text for better contrast */
+}
+
+/* Focus effect for input fields */
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #ffcb05; /* Golden color for focus */
+  box-shadow: 0 0 8px rgba(255, 203, 5, 0.3);
+  background-color: #fff; /* White background on focus */
+}
+
+/* Submit button styling */
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: #004b8d;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 600;
+  letter-spacing: 1px; /* Slightly spaced text for a more refined look */
+}
+
+button:hover {
+  background-color: #003366; /* Darker blue on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for hover */
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Add some spacing and style for error messages */
+span.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: block;
+  text-align: center;
+  font-weight: 500; /* Bold error messages for emphasis */
+  text-transform: uppercase; /* Uppercase error text */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  form {
+    padding: 20px;
+  }
+
+  .form-header h2 {
+    font-size: 1.6rem; /* Slightly smaller for mobile */
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    font-size: 1rem; /* Smaller input fields on mobile */
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 12px; /* Reduced padding on smaller screens */
+  }
+
+  label {
+    font-size: 1rem; /* Slightly smaller labels */
+  }
+}
+
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
